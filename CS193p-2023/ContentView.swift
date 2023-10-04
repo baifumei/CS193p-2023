@@ -8,62 +8,81 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis: [String] = ["🐲", "🥢", "🥟", "🧋", "👺", "👘", "🐼", "🎋", "🍊", "🫕", "🥮", "🥠", "🍚", "🥡", "🏸", "🧧"]
-    @State var cardCount: Int = 3
+    @State var cardCount: Int = 14
+    @State var theme: Theme = .china
     
     var body: some View {
         VStack {
             Text("Memorize!").font(.largeTitle)
-            ScrollView {
-                cards
-            }
-            Spacer()
-            cardCountAdjusters
+            
+            TabView() {
+                //theme 1
+                ScrollView {
+                    cards
+                }.tabItem {
+                    Image(systemName: "flag.fill")
+                    Text("China")
+                }.onAppear() {
+                    self.theme = .china
+                }
+                
+                //theme 2
+                ScrollView {
+                    cards
+                }.tabItem {
+                    Image(systemName: "person.badge.clock.fill")
+                    Text("Professions")
+                }.onAppear() {
+                    self.theme = .professions
+                }
+                
+                //theme 3
+                ScrollView {
+                    cards
+                }.tabItem {
+                    Image(systemName: "pawprint.fill")
+                    Text("Africa")
+                }.onAppear() {
+                    self.theme = .africa
+                }
+            }.accentColor(theme.backColor)
         }
-
-        .padding()
+        .padding(4)
     }
-    
-    
-    
-
     
     var cards: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
             ForEach(0..<cardCount, id: \.self) { emoji in
-                CardView(content: emojis[emoji]).aspectRatio(2/3, contentMode: .fit)
+                CardView(content: theme.emojis[emoji]).aspectRatio(2/3, contentMode: .fit)
             }
-        }.foregroundColor(.green)
-    }
-    
-    var cardCountAdjusters: some View {
-        HStack {
-            cardRemover
-            Spacer()
-            cardAdder
-        }.imageScale(.large)
-    }
-     
-    func cardCountAdjuster(by offset: Int, symbol: String) -> some View {
-        Button(action: {
-            cardCount += offset
-        }, label: {
-            Image(systemName: symbol)
-        }).disabled(cardCount + offset < 1 || cardCount + offset > emojis.count)
-    }
-    
-    var cardRemover: some View {
-        cardCountAdjuster(by: -1, symbol: "rectangle.stack.badge.minus.fill")
-    }
-    
-    var cardAdder: some View {
-        cardCountAdjuster(by: 1, symbol: "rectangle.stack.badge.plus.fill")
+        }.foregroundColor(theme.backColor)
     }
 }
 
 
 
-
+enum Theme: Int, CaseIterable {
+    case china, professions, africa
+    
+    var emojis: [String] {
+        switch self {
+        case .china:
+            return ["🇨🇳", "🐲", "🥢", "🥟", "🧋", "👺", "👘", "🐼", "🎋", "🍊", "🫕", "🥮", "🥠", "🀄️", "🍚", "🥡", "🏸", "🧧"]
+        case .professions:
+            return ["🧑🏼‍🌾", "👨🏻‍🍳", "👩🏽‍🏫", "👨🏾‍🏭", "💂🏻‍♀️", "🕵🏿", "👩🏼‍⚕️", "👷🏽", "👮🏾‍♂️", "👩🏼‍🎤", "🧑🏿‍💻", "🧑🏻‍💼", "👨🏼‍🔧", "👩🏽‍🔬", "👨🏿‍🎨", "🧑🏾‍🚒", "👩🏻‍✈️", "🧑🏼‍🚀", "👨🏽‍⚖️"]
+        case .africa:
+            return ["🐫", "🌴", "🐆", "🥥", "🦎","🦓", "☀️", "🐅", "🐘", "🦛", "🦘", "🐍", "🦏", "🐪"]
+        }
+    }
+    
+    var backColor: Color {
+        switch self {
+        case .china: return .red
+        case .professions: return .purple
+        case .africa: return .orange
+        }
+    }
+}
 
 
 struct CardView: View {
