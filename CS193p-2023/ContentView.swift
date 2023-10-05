@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var theme: Theme = .animals
-    @State var cardCount: Int = 3
+    @State var cardCount: Int = 7
     
     var body: some View {
         VStack {
@@ -19,17 +19,34 @@ struct ContentView: View {
             }
             Spacer()
             cardCountAdjusters
+            Spacer()
+            button
         }
 
         .padding()
     }
     
     
-    
+    var button: some View {
+        HStack(alignment: .center) {
+            ForEach(Theme.allCases, id: \.self) { theme in
+                Button (action: {
+                    self.theme = theme
+                }, label: {
+                    VStack {
+                        Image(systemName: theme.systemName)
+                        Text(theme.title)
+                    }.foregroundColor(theme.backColor)
+                        .imageScale(.large)
+                        .padding(.horizontal, 6)
+                })
+            }
+        }
+    }
 
     
     var cards: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 60))]) {
             ForEach(0..<cardCount, id: \.self) { emoji in
                 CardView(content: theme.emojis[emoji]).aspectRatio(2/3, contentMode: .fit)
             }
@@ -53,11 +70,11 @@ struct ContentView: View {
     }
     
     var cardRemover: some View {
-        cardCountAdjuster(by: -1, symbol: "rectangle.stack.badge.minus.fill")
+        cardCountAdjuster(by: -1, symbol: "rectangle.stack.badge.minus.fill").foregroundColor(.black)
     }
     
     var cardAdder: some View {
-        cardCountAdjuster(by: 1, symbol: "rectangle.stack.badge.plus.fill")
+        cardCountAdjuster(by: 1, symbol: "rectangle.stack.badge.plus.fill").foregroundColor(.black)
     }
 }
 
@@ -73,7 +90,7 @@ enum Theme: CaseIterable {
         case .animals:
             return "Animals"
         case .parties:
-            return "Balls"
+            return "Parties"
         }
     }
     
@@ -100,6 +117,19 @@ enum Theme: CaseIterable {
             return ["🐅", "🐫", "🦙", "🐆", "🦌", "🐕","🦓", "🐑", "🦍", "🐘", "🦛", "🦘", "🦧", "🦏", "🐪", "🦣", "🦒", "🐄", "🐎", "🐖", "🐈", "🦔", "🐇"]
         case .parties:
             return ["💃🏻", "🕺🏼", "🪩", "🎁", "🥂", "🎂", "🎆", "🎇", "🎉", "👯‍♀️", "💐", "🍱", "🍧", "🍭", "🍹", "🍷", "🛼", "🤹🏼‍♀️", "🎺", "🎳", "🎮", "🚤", "🛥️", "🎢", "🎡", "🎠", "🔮", "🎶"]
+        }
+    }
+    
+    var systemName: String {
+        switch self {
+        case .china:
+            return "flag.fill"
+        case .professions:
+            return "person.badge.clock.fill"
+        case .animals:
+            return "pawprint.fill"
+        case .parties:
+            return "sparkles"
         }
     }
 }
