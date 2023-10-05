@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var theme: Theme = .animals
-    @State var cardCount: Int = 7
     
     var body: some View {
         VStack {
@@ -18,11 +17,8 @@ struct ContentView: View {
                 cards
             }
             Spacer()
-            cardCountAdjusters
-            Spacer()
             button
         }
-
         .padding()
     }
     
@@ -44,39 +40,22 @@ struct ContentView: View {
         }
     }
 
+    var randomInt: Int {
+        return Int.random(in: 4...theme.emojis.count)
+    }
+    
+    var widthCard: Float = 60
     
     var cards: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 60))]) {
-            ForEach(0..<cardCount, id: \.self) { emoji in
-                CardView(content: theme.emojis[emoji]).aspectRatio(2/3, contentMode: .fit)
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: CGFloat(widthCard)))]) {
+            ForEach(theme.emojis.shuffled()[0..<randomInt], id: \.self) { emoji in
+                CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
+//                CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
             }
         }.foregroundColor(theme.backColor)
     }
-    
-    var cardCountAdjusters: some View {
-        HStack {
-            cardRemover
-            Spacer()
-            cardAdder
-        }.imageScale(.large)
-    }
-     
-    func cardCountAdjuster(by offset: Int, symbol: String) -> some View {
-        Button(action: {
-            cardCount += offset
-        }, label: {
-            Image(systemName: symbol)
-        }).disabled(cardCount + offset < 1 || cardCount + offset > theme.emojis.count)
-    }
-    
-    var cardRemover: some View {
-        cardCountAdjuster(by: -1, symbol: "rectangle.stack.badge.minus.fill").foregroundColor(.black)
-    }
-    
-    var cardAdder: some View {
-        cardCountAdjuster(by: 1, symbol: "rectangle.stack.badge.plus.fill").foregroundColor(.black)
-    }
 }
+
 
 enum Theme: CaseIterable {
     case china, professions, animals, parties
