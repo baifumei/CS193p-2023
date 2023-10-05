@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis: [String] = ["🐲", "🥢", "🥟", "🧋", "👺", "👘", "🐼", "🎋", "🍊", "🫕", "🥮", "🥠", "🍚", "🥡", "🏸", "🧧"]
+    @State private var theme: Theme = .animals
     @State var cardCount: Int = 3
     
     var body: some View {
@@ -31,9 +31,9 @@ struct ContentView: View {
     var cards: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
             ForEach(0..<cardCount, id: \.self) { emoji in
-                CardView(content: emojis[emoji]).aspectRatio(2/3, contentMode: .fit)
+                CardView(content: theme.emojis[emoji]).aspectRatio(2/3, contentMode: .fit)
             }
-        }.foregroundColor(.green)
+        }.foregroundColor(theme.backColor)
     }
     
     var cardCountAdjusters: some View {
@@ -49,7 +49,7 @@ struct ContentView: View {
             cardCount += offset
         }, label: {
             Image(systemName: symbol)
-        }).disabled(cardCount + offset < 1 || cardCount + offset > emojis.count)
+        }).disabled(cardCount + offset < 1 || cardCount + offset > theme.emojis.count)
     }
     
     var cardRemover: some View {
@@ -61,7 +61,48 @@ struct ContentView: View {
     }
 }
 
-
+enum Theme: CaseIterable {
+    case china, professions, animals, parties
+    
+    var title: String {
+        switch self {
+        case .china:
+            return "China"
+        case .professions:
+            return "Professions"
+        case .animals:
+            return "Animals"
+        case .parties:
+            return "Balls"
+        }
+    }
+    
+    var backColor: Color {
+        switch self {
+        case .china:
+            return .red
+        case .professions:
+            return .purple
+        case .animals:
+            return .orange
+        case .parties:
+            return .green
+        }
+    }
+    
+    var emojis: [String] {
+        switch self {
+        case .china:
+            return ["🐲", "🥢", "🥟", "🧋", "👺", "👘", "🐼", "🎋", "🍊", "🫕", "🥮", "🥠", "🍚", "🥡", "🏸", "🧧", "🫖", "🇨🇳", "🏮", "🀄️"]
+        case .professions:
+            return ["🧑🏼‍🌾", "👨🏻‍🍳", "👩🏽‍🏫", "👨🏾‍🏭", "💂🏻‍♀️", "🕵🏿", "👩🏼‍⚕️", "👷🏽", "👮🏾‍♂️", "👩🏼‍🎤", "🧑🏿‍💻", "🧑🏻‍💼", "👨🏼‍🔧", "👩🏽‍🔬", "👨🏿‍🎨", "🧑🏾‍🚒", "👩🏻‍✈️", "🧑🏼‍🚀", "👨🏽‍⚖️"]
+        case .animals:
+            return ["🐅", "🐫", "🦙", "🐆", "🦌", "🐕","🦓", "🐑", "🦍", "🐘", "🦛", "🦘", "🦧", "🦏", "🐪", "🦣", "🦒", "🐄", "🐎", "🐖", "🐈", "🦔", "🐇"]
+        case .parties:
+            return ["💃🏻", "🕺🏼", "🪩", "🎁", "🥂", "🎂", "🎆", "🎇", "🎉", "👯‍♀️", "💐", "🍱", "🍧", "🍭", "🍹", "🍷", "🛼", "🤹🏼‍♀️", "🎺", "🎳", "🎮", "🚤", "🛥️", "🎢", "🎡", "🎠", "🔮", "🎶"]
+        }
+    }
+}
 
 
 
