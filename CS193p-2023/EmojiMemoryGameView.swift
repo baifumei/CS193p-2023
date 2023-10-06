@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-    var viewModel: EmojiMemoryGame = EmojiMemoryGame()
+    @ObservedObject var viewModel: EmojiMemoryGame
         
     var body: some View {
         VStack {
             ScrollView {
                 cards
+            }
+            Button("Shuffle!") {
+                viewModel.shuffle()
             }
         }.padding()
     }
@@ -48,7 +51,7 @@ struct CardView: View {
                 base.fill(.white)
                 base.strokeBorder(lineWidth: 3)
                 Text(card.content)
-                    .font(.system(size: 200))
+                    .font(.system(size: 50))
                     .minimumScaleFactor(0.01)
                     .aspectRatio(1, contentMode: .fit)
             }.opacity(card.isFaceUp ? 1 : 0)
@@ -79,6 +82,6 @@ struct CardView: View {
 
 struct EmojiMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiMemoryGameView()
+        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
     }
 }
