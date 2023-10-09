@@ -14,6 +14,7 @@ struct EmojiMemoryGameView: View {
         VStack {
             ScrollView {
                 cards
+                    .animation(.easeInOut(duration: 0.5), value: viewModel.cards)
             }
             Button("Shuffle!") {
                 viewModel.shuffle()
