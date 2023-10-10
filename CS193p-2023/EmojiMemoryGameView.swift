@@ -32,7 +32,7 @@ struct EmojiMemoryGameView: View {
                     .onTapGesture {
                     viewModel.choose(card)
                     }
-            }.animation(.easeInOut(duration: 0.4 ), value: viewModel.cards)
+            }.animation(.easeInOut(duration: 0.5 ), value: viewModel.cards)
         }.foregroundColor(.green)
             
     }
@@ -63,6 +63,7 @@ struct CardView: View {
             }.opacity(card.isFaceUp ? 1 : 0)
             base.fill().opacity(card.isFaceUp ? 0 : 1)
         }
+        .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
     }
 }
 
