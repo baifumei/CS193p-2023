@@ -4,8 +4,11 @@ struct EmojiMemorizeView: View {
     @ObservedObject var game: EmojiMemorizeGame
     
     var body: some View {
-        ScrollView {
-            cards
+        VStack {
+            ScrollView {
+                cards
+            }
+            button
         }
         .padding()
     }
@@ -19,7 +22,19 @@ struct EmojiMemorizeView: View {
             ForEach(game.cards) { card in
                 CardView(content: card.content).aspectRatio(2/3, contentMode: .fit)
             }
-        }.foregroundColor(.blue)
+        }.foregroundColor(game.color)
+    }
+    
+    var button: some View {
+        Button(action: {
+            game.newGame()
+            
+        }, label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 20).frame(width: 200, height: 50).foregroundColor(game.color)
+                Text("New Game!").foregroundColor(.white).bold()
+            }
+        })
     }
 }
 

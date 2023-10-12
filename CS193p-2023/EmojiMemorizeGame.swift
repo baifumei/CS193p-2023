@@ -75,9 +75,17 @@ class EmojiMemorizeGame: ObservableObject {
         return model.cards
     }
     
+    var title = Theme.china.title
+    var color = Theme.china.backColor
     
 //MARK: Intents
     func choose() {
         //
+    }
+    func newGame() {
+        let theme = Theme.allCases.randomElement()!
+        title = theme.title
+        color = theme.backColor
+        model = EmojiMemorizeGame.createMemorizeGame(theme: theme)
     }
 }
