@@ -1,8 +1,6 @@
 import SwiftUI
 
-class EmojiMemorizeGame {
-    var model: MemorizeGame<String>
-    
+class EmojiMemorizeGame: ObservableObject {
     enum Theme: CaseIterable {
         case china, professions, animals, parties, flags
         
@@ -39,7 +37,7 @@ class EmojiMemorizeGame {
         var emojis: [String] {
             switch self {
             case .china:
-                return ["🐲", "🥢", "🥟", "🧋", "👺", "👘", "🐼", "🎋", "🍊", "🫕", "🥮", "🥠", "🍚", "🥡", "🏸", "🧧", "🫖", "🇨🇳", "🏮", "🀄️"]
+                return ["🐲", "🥢", "🥟", "🧋", "👺", "👘", "🐼", "🎋", "🍊", "🫕", "🥮", "🥠", "🍚", "🥡", "🏸", "🧧", "🫖", "🏮", "🀄️"]
             case .professions:
                 return ["🧑🏼‍🌾", "👨🏻‍🍳", "👩🏽‍🏫", "👨🏾‍🏭", "💂🏻‍♀️", "🕵🏿", "👩🏼‍⚕️", "👷🏽", "👮🏾‍♂️", "👩🏼‍🎤", "🧑🏿‍💻", "🧑🏻‍💼", "👨🏼‍🔧", "👩🏽‍🔬", "👨🏿‍🎨", "🧑🏾‍🚒", "👩🏻‍✈️", "🧑🏼‍🚀", "👨🏽‍⚖️"]
             case .animals:
@@ -59,6 +57,22 @@ class EmojiMemorizeGame {
         var pairCount: Int {
             return Int.random(in: 4..<emojis.count)
         }
+    }
+    
+    private static func createMemorizeGame(theme: Theme = .china) -> MemorizeGame<String> {
+        return MemorizeGame<String>(numberOfPairsOfCards: theme.pairCount) { pairIndex in
+            if theme.emojis.indices.contains(pairIndex) {
+                return theme.emojis[pairIndex]
+            } else {
+                return "⁉️"
+            }
+        }
+    }
+    
+    @Published private var model = createMemorizeGame()
+
+    var cards: Array<MemorizeGame<String>.Card> {
+        return model.cards
     }
     
     

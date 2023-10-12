@@ -1,8 +1,16 @@
 import Foundation
 
 struct MemorizeGame<CardContent> {
-    private var cards: Array<Card>
+    private(set) var cards: Array<Card>
     
+    init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
+        cards = []
+        for pairIndex in 0..<max(2, numberOfPairsOfCards) {
+            let content = cardContentFactory(pairIndex)
+            cards.append(Card(content: content, id: "\(pairIndex+1)a"))
+            cards.append(Card(content: content, id: "\(pairIndex+1)b"))
+        }
+    }
     
     private func choose(_ card: Card) {
         //
@@ -12,9 +20,10 @@ struct MemorizeGame<CardContent> {
     }
     
     
-    struct Card {
+    struct Card: Identifiable {
         var isFaceUp = true
         var isMatched = false
         var content: CardContent
+        var id: String
     }
 }
