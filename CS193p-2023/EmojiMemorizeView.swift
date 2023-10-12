@@ -5,6 +5,7 @@ struct EmojiMemorizeView: View {
     
     var body: some View {
         VStack {
+            Text(game.title).font(.title)
             ScrollView {
                 cards
             }

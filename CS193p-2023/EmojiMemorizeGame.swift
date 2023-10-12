@@ -2,7 +2,7 @@ import SwiftUI
 
 class EmojiMemorizeGame: ObservableObject {
     enum Theme: CaseIterable {
-        case china, professions, animals, parties, flags
+        case china, professions, animals, parties, flags, hobby
         
         var name: String {
             switch self {
@@ -16,6 +16,8 @@ class EmojiMemorizeGame: ObservableObject {
                 return "Parties"
             case .flags:
                 return "Flags"
+            case .hobby:
+                return "Hobby"
             }
         }
         
@@ -31,6 +33,8 @@ class EmojiMemorizeGame: ObservableObject {
                 return .green
             case .flags:
                 return .blue
+            case .hobby:
+                return .yellow
             }
         }
         
@@ -46,6 +50,8 @@ class EmojiMemorizeGame: ObservableObject {
                 return ["💃🏻", "🕺🏼", "🪩", "🎁", "🥂", "🎂", "🎆", "🎇", "🎉", "👯‍♀️", "💐", "🍱", "🍧", "🍭", "🍹", "🍷", "🛼", "🤹🏼‍♀️", "🎺", "🎳", "🎮", "🚤", "🛥️", "🎢", "🎡", "🎠", "🔮", "🎶"]
             case .flags:
                 return ["🇦🇷", "🇦🇲", "🇦🇺", "🇧🇩", "🇧🇾", "🇧🇪", "🇧🇷", "🇨🇦", "🇨🇳", "🇨🇮", "🇨🇿", "🇩🇰", "🇪🇪", "🇫🇮", "🇫🇷", "🇬🇪", "🇩🇪",  "🇬🇷", "🇭🇺", "🇮🇱", "🇯🇵", "🇵🇼", "🇵🇭", "🇵🇱", "🇷🇴", "🇷🇺", "🇸🇬", "🇰🇷", "🇪🇸", "🇸🇪", "🇹🇷", "🇺🇦", "🇬🇧", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "🇺🇸"]
+            case .hobby:
+                return ["🎸", "🎤", "🎮", "🎳", "🧗🏻", "🏊🏼", "🎨", "🏄🏽‍♀️", "🏸", "🧶", "🏃🏾‍♀️", "🪡", "🥘", "🛼", "⛸️", "🤺", "⛹🏻‍♂️", "🏎️", "📖"]
             }
         }
         
