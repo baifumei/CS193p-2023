@@ -5,7 +5,11 @@ struct EmojiMemorizeView: View {
     
     var body: some View {
         VStack {
-            Text(game.title).font(.title)
+            HStack {
+                Text(game.title).font(.title)
+                Spacer()
+                Text("Score: \(game.score)")
+            }
             ScrollView {
                 cards
                     .animation(.easeInOut(duration: 0.5), value: game.cards)
@@ -17,7 +21,7 @@ struct EmojiMemorizeView: View {
     
 
     
-    var widthCard: Float = 60
+    var widthCard: Float = 70
     
     var cards: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: CGFloat(widthCard)))]) {

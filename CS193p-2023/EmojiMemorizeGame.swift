@@ -80,6 +80,9 @@ class EmojiMemorizeGame: ObservableObject {
     var cards: Array<MemorizeGame<String>.Card> {
         return model.cards
     }
+    var score: Int {
+        return model.score
+    }
     
     var title = Theme.china.title
     var color = Theme.china.backColor
