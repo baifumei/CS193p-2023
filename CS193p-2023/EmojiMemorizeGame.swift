@@ -56,7 +56,7 @@ class EmojiMemorizeGame: ObservableObject {
         }
         
         var title: String {
-            let emoji = emojis.randomElement()
+            let emoji = emojis.randomElement()!
             return "\(name) \(String(describing: emoji))"
         }
         
@@ -84,9 +84,13 @@ class EmojiMemorizeGame: ObservableObject {
     var title = Theme.china.title
     var color = Theme.china.backColor
     
-//MARK: Intents
-    func choose() {
-        //
+    
+//MARK: Intents:
+    func choose(_ card: MemorizeGame<String>.Card) {
+        model.choose(card)
+    }
+    func shuffle() {
+        model.shuffle()
     }
     func newGame() {
         let theme = Theme.allCases.randomElement()!

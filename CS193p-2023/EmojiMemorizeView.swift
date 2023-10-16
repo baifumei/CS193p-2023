@@ -8,8 +8,9 @@ struct EmojiMemorizeView: View {
             Text(game.title).font(.title)
             ScrollView {
                 cards
+                    .animation(.easeInOut(duration: 0.5), value: game.cards)
             }
-            button
+            button.animation(.easeInOut(duration: 0.5), value: game.cards)
         }
         .padding()
     }
@@ -21,9 +22,14 @@ struct EmojiMemorizeView: View {
     var cards: some View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: CGFloat(widthCard)))]) {
             ForEach(game.cards) { card in
-                CardView(content: card.content).aspectRatio(2/3, contentMode: .fit)
+                CardView(card)
+                    .aspectRatio(2/3, contentMode: .fit)
+                    .onTapGesture {
+                        game.choose(card)
+                    }
             }
         }.foregroundColor(game.color)
+            
     }
     
     var button: some View {
@@ -41,8 +47,11 @@ struct EmojiMemorizeView: View {
 
 
 struct CardView: View {
-    let content: String
-    @State var isFaceUp = true
+    var card: MemorizeGame<String>.Card
+    
+    init(_ card: MemorizeGame<String>.Card) {
+        self.card = card
+    }
     
     var body: some View {
         ZStack {
@@ -50,13 +59,11 @@ struct CardView: View {
             Group {
                 base.fill(.white)
                 base.strokeBorder(lineWidth: 3)
-                Text(content).font(.largeTitle)
-            }.opacity(isFaceUp ? 1 : 0)
-            base.fill().opacity(isFaceUp ? 0 : 1)
+                Text(card.content).font(.largeTitle)
+            }.opacity(card.isFaceUp ? 1 : 0)
+            base.fill().opacity(card.isFaceUp ? 0 : 1)
         }
-        .onTapGesture {
-            isFaceUp.toggle()
-        }
+        .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
     }
 }
 
