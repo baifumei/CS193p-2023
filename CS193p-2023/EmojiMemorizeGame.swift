@@ -89,9 +89,9 @@ class EmojiMemorizeGame: ObservableObject {
     func choose(_ card: MemorizeGame<String>.Card) {
         model.choose(card)
     }
-    func shuffle() {
-        model.shuffle()
-    }
+//    func shuffle() {
+//        model.shuffle()
+//    }
     func newGame() {
         let theme = Theme.allCases.randomElement()!
         title = theme.title

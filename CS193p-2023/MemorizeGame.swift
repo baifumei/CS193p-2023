@@ -10,6 +10,7 @@ struct MemorizeGame<CardContent> where CardContent: Equatable {
             cards.append(Card(content: content, id: "\(pairIndex+1)a"))
             cards.append(Card(content: content, id: "\(pairIndex+1)b"))
         }
+        cards.shuffle()
     }
     
     var indexOneAndTheOnlyFaceUpCard: Int? {
@@ -33,9 +34,9 @@ struct MemorizeGame<CardContent> where CardContent: Equatable {
         }
     }
     
-    mutating func shuffle() {
-        cards.shuffle()
-    }
+//    mutating func shuffle() {
+//        cards.shuffle()
+//    }
     
     
     struct Card: Equatable, Identifiable {
