@@ -12,10 +12,8 @@ struct EmojiMemoryGameView: View {
         
     var body: some View {
         VStack {
-            ScrollView {
-                cards
-                    .animation(.easeInOut(duration: 0.5), value: viewModel.cards)
-            }
+            cards
+                .animation(.easeInOut(duration: 0.5), value: viewModel.cards)
             Button("Shuffle!") {
                 viewModel.shuffle()
             }
@@ -24,17 +22,43 @@ struct EmojiMemoryGameView: View {
     
     
     var cards: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 80), spacing: 0)], spacing: 0) {
-            ForEach(viewModel.cards) { card in
-                CardView(card)
-                    .aspectRatio(2/3, contentMode: .fit)
-                    .padding(4)
-                    .onTapGesture {
-                    viewModel.choose(card)
+        GeometryReader { geometry in
+            let gridItemSize = gridItemWidthThatFits(
+                count: viewModel.cards.count,
+                size: geometry.size,
+                atAspectRatio: 2/3
+            )
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: gridItemSize), spacing: 0)], spacing: 0) {
+                ForEach(viewModel.cards) { card in
+                    CardView(card)
+                        .aspectRatio(2/3, contentMode: .fit)
+                        .padding(3)
+                        .onTapGesture {
+                            viewModel.choose(card)
                     }
-            }.animation(.easeInOut(duration: 0.5 ), value: viewModel.cards)
+                }
+            }
         }.foregroundColor(.green)
+    }
+    
+    func gridItemWidthThatFits(
+        count: Int,
+        size: CGSize,
+        atAspectRatio: CGFloat
+    ) -> CGFloat {
+        let count = CGFloat(count)
+        var columnCount = 1.0
+        repeat {
+            let width = size.width / columnCount
+            let height = width / atAspectRatio
             
+            let rowCount = (count / columnCount).rounded(.up)
+            if rowCount * height < size.height {
+                return (size.width / columnCount).rounded(.down)
+            }
+            columnCount += 1
+        } while columnCount < count
+        return min(size.width / count, size.height * atAspectRatio).rounded(.down)
     }
 }
 
