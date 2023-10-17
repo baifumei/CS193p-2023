@@ -29,3 +29,7 @@ The buttons include an image (created using an SF Symbol) representing the theme
 4. Added the score: 1 point for every previously seen card that is involved in a mismatch and awarding 2 points for every match (whether or not the cards involved have been “previously seen”)
 
 <img width="300" alt="P2" src="https://sun9-3.userapi.com/impg/TrJG4_09tJoMd1avuWrjA0vit_FXTA9ObU0NWA/APnp0i6kxms.jpg?size=580x1060&quality=96&sign=0b3c8cfddc0e6ad5a92afd0159c8aa2e&type=album"> <img width="300" alt="P2" src="https://sun9-40.userapi.com/impg/Gzek4nZ9C9TMMtWXf0bBG-Wf4tGHKw8rFyadUQ/whLSXr1XXlM.jpg?size=580x1060&quality=96&sign=015fa036794aa4cf645da66e03d99c4d&type=album"> <img width="300" alt="P2" src="https://sun9-32.userapi.com/impg/ZcNNOghZ3iIPEWlAIOjpgdfWVPWPZUnpEkV7dA/a0gLQOSkWmU.jpg?size=580x1060&quality=96&sign=dbc547ebf1cf41256793afd606fa7ff1&type=album">
+
+5. Added GeometryReader 
+
+<img width="300" alt="P2" src="https://sun9-66.userapi.com/impg/wR7D9N1ZVcH5-g4hIorACOYN98nCwg7cvfVC2g/hse5Wp4jNt4.jpg?size=560x1060&quality=96&sign=fc2d8629d25942bad111faaa4636ff8d&type=album"> <img width="300" alt="P2" src="https://sun77-1.userapi.com/impg/6-pUJmeikpLoi7grfWW5peku67-D7xFNgHOccw/5V8YQ895V7U.jpg?size=560x1060&quality=96&sign=6e72243b025f2e5a08e42e23ca400279&type=album"> <img width="300" alt="P2" src="https://sun9-79.userapi.com/impg/kM5Qm_kopncf3DElv4eNoVRpKMUlTNHRAyS-dA/2t5aGZCYyRE.jpg?size=560x1060&quality=96&sign=f2c2faf8e38131fbf0dc64df4ecf57f7&type=album">
