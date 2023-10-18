@@ -89,7 +89,10 @@ struct CardView: View {
             Group {
                 base.fill(.white)
                 base.strokeBorder(lineWidth: 3)
-                Text(card.content).font(.largeTitle)
+                Text(card.content)
+                    .font(.system(size: 50))
+                    .minimumScaleFactor(0.02)
+                    .aspectRatio(1, contentMode: .fit)
             }.opacity(card.isFaceUp ? 1 : 0)
             base.fill().opacity(card.isFaceUp ? 0 : 1)
         }
