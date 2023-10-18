@@ -29,3 +29,7 @@
 - added GeometryReader()
 
 <img width="300" alt="P2" src="https://sun9-72.userapi.com/impg/3dweKP1qyVK6Bv9IKzMjcDhUJWiK0IrYQrgI8Q/HSVnGNqa_QE.jpg?size=560x1060&quality=96&sign=a2dfeae334ee676eb8348cad69e4e87a&type=album"> <img width="300" alt="P2" src="https://sun9-36.userapi.com/impg/AIvRyeUK9O_eROjf3njzVHAOnE2EWvE4ICjppA/zbDVQFEX9Vg.jpg?size=560x1060&quality=96&sign=f2d3876aaa407adeea92f9e288a69cc4&type=album">
+
+ #  Lecture 6: 
+💡What's new?
+- Created a new file that implement AspectVGrid (GeometryReader, @ViewBuilder, LazyVGrid)
