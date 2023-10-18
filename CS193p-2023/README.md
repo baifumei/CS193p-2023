@@ -33,3 +33,7 @@ The buttons include an image (created using an SF Symbol) representing the theme
 5. Added GeometryReader 
 
 <img width="300" alt="P2" src="https://sun9-66.userapi.com/impg/wR7D9N1ZVcH5-g4hIorACOYN98nCwg7cvfVC2g/hse5Wp4jNt4.jpg?size=560x1060&quality=96&sign=fc2d8629d25942bad111faaa4636ff8d&type=album"> <img width="300" alt="P2" src="https://sun77-1.userapi.com/impg/6-pUJmeikpLoi7grfWW5peku67-D7xFNgHOccw/5V8YQ895V7U.jpg?size=560x1060&quality=96&sign=6e72243b025f2e5a08e42e23ca400279&type=album"> <img width="300" alt="P2" src="https://sun9-79.userapi.com/impg/kM5Qm_kopncf3DElv4eNoVRpKMUlTNHRAyS-dA/2t5aGZCYyRE.jpg?size=560x1060&quality=96&sign=f2c2faf8e38131fbf0dc64df4ecf57f7&type=album">
+
+6. Increased the emojis size and fit them to cards size
+
+<img width="300" alt="P2" src="https://sun9-79.userapi.com/impg/_HD4P6fuYIVWnqRqsGKpnOlz_gudnyTHxAaOdA/wjQAxLobzkw.jpg?size=640x1260&quality=96&sign=4477588ad4072027bc6b1c1aefbd593d&type=album"> <img width="300" alt="P2" src="https://sun9-20.userapi.com/impg/0qU7xSSEpjqTReTZ6wWFET0KTxrRRq03jtgzIA/f3y3NeCzmYc.jpg?size=640x1258&quality=96&sign=325ca8586bc4cbcb8873a23f0ab5e324&type=album"> <img width="300" alt="P2" src="https://sun9-50.userapi.com/impg/dPgNF1Ju2doE5ku6uNoQgcuol8KTBZS7M4eYwA/w0di8laoTfA.jpg?size=640x1260&quality=96&sign=130832a3f22500b72085ad4694a910d9&type=album">
