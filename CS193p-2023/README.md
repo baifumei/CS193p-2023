@@ -37,3 +37,9 @@ The buttons include an image (created using an SF Symbol) representing the theme
 6. Increased the emojis size and fit them to cards size
 
 <img width="300" alt="P2" src="https://sun9-79.userapi.com/impg/_HD4P6fuYIVWnqRqsGKpnOlz_gudnyTHxAaOdA/wjQAxLobzkw.jpg?size=640x1260&quality=96&sign=4477588ad4072027bc6b1c1aefbd593d&type=album"> <img width="300" alt="P2" src="https://sun9-20.userapi.com/impg/0qU7xSSEpjqTReTZ6wWFET0KTxrRRq03jtgzIA/f3y3NeCzmYc.jpg?size=640x1258&quality=96&sign=325ca8586bc4cbcb8873a23f0ab5e324&type=album"> <img width="300" alt="P2" src="https://sun9-50.userapi.com/impg/dPgNF1Ju2doE5ku6uNoQgcuol8KTBZS7M4eYwA/w0di8laoTfA.jpg?size=640x1260&quality=96&sign=130832a3f22500b72085ad4694a910d9&type=album">
+
+## Homework 3:
+
+1. Changed the logic of the game. Now users can select up to 3 cards by touching on them in an attempt to make a Set. 
+
+<img width="300" alt="P2" src="https://sun9-53.userapi.com/impg/kmAKETTcaZSwButxe9pRrvQQ5uFxldEhcIDDrA/i3yagoAWDzk.jpg?size=630x1250&quality=96&sign=2ba61bfe4c514ad88964434b688a111c&type=album"> <img width="300" alt="P2" src="https://sun9-12.userapi.com/impg/IpHa2GnUUA66Czkd7xiuh7G25oEowTJ4NC_ANg/OUxCoYlIWbY.jpg?size=630x1250&quality=96&sign=5b9f6f518e77d7ebaed55cd983fcad57&type=album"> <img width="300" alt="P2" src="https://sun9-48.userapi.com/impg/9cZmLV9xFN9BBeIEkPJi8ShJ8kpzSFNF2JKPHw/6tloR-oRa_Y.jpg?size=630x1250&quality=96&sign=cc285a95a8b63b0b2b69af010901b84c&type=album">
