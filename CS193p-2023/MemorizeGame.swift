@@ -10,42 +10,36 @@ struct MemorizeGame<CardContent> where CardContent: Equatable {
             let content = cardContentFactory(pairIndex)
             cards.append(Card(content: content, id: "\(pairIndex+1)a"))
             cards.append(Card(content: content, id: "\(pairIndex+1)b"))
+            cards.append(Card(content: content, id: "\(pairIndex+1)c"))
         }
         cards.shuffle()
     }
     
-    var indexOneAndTheOnlyFaceUpCard: Int? {
-        get { cards.indices.filter { index in cards[index].isFaceUp }.only }
-        set { cards.indices.forEach { cards[$0].isFaceUp = (newValue == $0) } }
-    }
     
-    var alreadyChosenCards = Set<Int>()
+    var alreadyChosenCards = Array<Int>()
 
     mutating func choose(_ card: Card) {
-        if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
-            if !cards[chosenIndex].isFaceUp && !cards[chosenIndex].isMatched {
-                if let potentialMatchIndex = indexOneAndTheOnlyFaceUpCard {
-                    if cards[potentialMatchIndex].content == cards[chosenIndex].content {
-                        cards[potentialMatchIndex].isMatched = true
-                        cards[chosenIndex].isMatched = true
-                        score += 2
-                    } else {
-                        if alreadyChosenCards.contains(chosenIndex) {
-                            score -= 1
-                        }
-                    }
-                } else {
-                    indexOneAndTheOnlyFaceUpCard = chosenIndex
+        if alreadyChosenCards.count == 3 {
+            if cards[alreadyChosenCards[0]].content == cards[alreadyChosenCards[1]].content  {
+                if cards[alreadyChosenCards[1]].content == cards[alreadyChosenCards[2]].content {
+                    cards[alreadyChosenCards[0]].isMatched = true
+                    cards[alreadyChosenCards[1]].isMatched = true
+                    cards[alreadyChosenCards[2]].isMatched = true
+                    score += 3
                 }
-                cards[chosenIndex].isFaceUp = true
             }
-            alreadyChosenCards.insert(chosenIndex)
+            cards[alreadyChosenCards[0]].isFaceUp = false
+            cards[alreadyChosenCards[1]].isFaceUp = false
+            cards[alreadyChosenCards[2]].isFaceUp = false
+            score -= 1
+            alreadyChosenCards = Array<Int>()
+        }
+        if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
+            cards[chosenIndex].isFaceUp = true
+            alreadyChosenCards.append(chosenIndex)
+            
         }
     }
-    
-//    mutating func shuffle() {
-//        cards.shuffle()
-//    }
     
     
     struct Card: Equatable, Identifiable {

@@ -85,7 +85,7 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            let base = RoundedRectangle(cornerRadius: 25)
+            let base = RoundedRectangle(cornerRadius: 20)
             Group {
                 base.fill(.white)
                 base.strokeBorder(lineWidth: 3)
