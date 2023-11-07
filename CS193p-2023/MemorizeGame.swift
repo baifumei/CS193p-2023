@@ -35,9 +35,17 @@ struct MemorizeGame<CardContent> where CardContent: Equatable {
             alreadyChosenCards = Array<Int>()
         }
         if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
-            cards[chosenIndex].isFaceUp = true
-            alreadyChosenCards.append(chosenIndex)
-            
+            if !cards[chosenIndex].isFaceUp {
+                cards[chosenIndex].isFaceUp = true
+                alreadyChosenCards.append(chosenIndex)
+            } else if cards[chosenIndex].isFaceUp {
+                if alreadyChosenCards.count <= 2 {
+                    if alreadyChosenCards.contains(chosenIndex) {
+                        cards[chosenIndex].isFaceUp = false
+                        alreadyChosenCards = alreadyChosenCards.filter(){$0 != chosenIndex}
+                    }
+                }
+            }
         }
     }
     
