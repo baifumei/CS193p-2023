@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CardView: View {
-    var card: MemoryGame<String>.Card
+    typealias Card = MemoryGame<String>.Card
+    var card: Card
     
-    init(_ card: MemoryGame<String>.Card) {
+    init(_ card: Card) {
         self.card = card
     }
     
@@ -35,9 +36,33 @@ struct CardView: View {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+//I can make my preview in the code below
 struct CardView_Previews: PreviewProvider {
+    typealias Card = MemoryGame<String>.Card
+    
     static var previews: some View {
-        CardView(MemoryGame<String>.Card(content: "X", id: "test1"))
+        VStack {
+            HStack {
+                CardView(Card(isFaceUp: true, content: "X", id: "test1"))
+                CardView(Card(isFaceUp: true, content: "X", id: "test1"))
+            }
+            HStack {
+                CardView(Card(content: "X", id: "test1"))
+                CardView(Card(content: "X", id: "test1"))
+            }
+        }
             .padding()
             .foregroundColor(.pink)
     }
