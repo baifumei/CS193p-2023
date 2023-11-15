@@ -16,11 +16,6 @@ struct CardView: View {
     }
     
     var body: some View {
-        ZStack {
-            let base = RoundedRectangle(cornerRadius: Constant.cornerRadius)
-            Group {
-                base.fill(.white)
-                base.strokeBorder(lineWidth: Constant.lineWidth)
                 Pie(endAngle: .degrees(90))
                     .opacity(Constant.Pie.opacity)
                     .overlay(
@@ -30,11 +25,8 @@ struct CardView: View {
                             .aspectRatio(1, contentMode: .fit)
                             .padding(Constant.Pie.inset)
                     )
+                    .cardify(isFaceUp: card.isFaceUp)
                     .padding(Constant.inset)
-            }.opacity(card.isFaceUp ? 1 : 0)
-            base.fill().opacity(card.isFaceUp ? 0 : 1)
-        }
-        .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
     }
     
     
