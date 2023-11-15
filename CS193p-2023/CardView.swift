@@ -21,10 +21,15 @@ struct CardView: View {
             Group {
                 base.fill(.white)
                 base.strokeBorder(lineWidth: Constant.lineWidth)
-                Text(card.content)
-                    .font(.system(size: Constant.FontSize.largest))
-                    .minimumScaleFactor(Constant.FontSize.scaleFactor)
-                    .aspectRatio(1, contentMode: .fit)
+                Pie(endAngle: .degrees(90))
+                    .opacity(Constant.Pie.opacity)
+                    .overlay(
+                        Text(card.content)
+                            .font(.system(size: Constant.FontSize.largest))
+                            .minimumScaleFactor(Constant.FontSize.scaleFactor)
+                            .aspectRatio(1, contentMode: .fit)
+                            .padding(Constant.Pie.inset)
+                    )
                     .padding(Constant.inset)
             }.opacity(card.isFaceUp ? 1 : 0)
             base.fill().opacity(card.isFaceUp ? 0 : 1)
@@ -42,6 +47,10 @@ struct CardView: View {
             static let largest: CGFloat = 200
             static let smallest: CGFloat = 10
             static let scaleFactor: CGFloat = smallest / largest
+        }
+        struct Pie {
+            static let opacity: Double = 0.4
+            static let inset: CGFloat = 5
         }
     }
 }
