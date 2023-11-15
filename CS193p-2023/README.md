@@ -39,4 +39,5 @@
 - Decomposing Views. CardView
 - Create a Custom Shapes - Pie()
 - Create a file Cardify that implements ViewModifier and add an extention
+
 <img width="300" alt="P2" src="https://sun9-79.userapi.com/impg/0nih3tQYmcQqHPr9Bdyk8S7yoqrAJSyZ1dqspg/PM97p1KwHB4.jpg?size=642x1242&quality=96&sign=e346f7fddd9e1af4b0284e69ad769851&type=album"> <img width="300" alt="P2" src="https://sun9-80.userapi.com/impg/dBVVYLT5djFKDzIIn9BTkEP3NbtzohdFbgec2A/6CQZmwjbcT4.jpg?size=640x1240&quality=96&sign=6ff2d07a70005a9af3720c0061b5089d&type=album">
