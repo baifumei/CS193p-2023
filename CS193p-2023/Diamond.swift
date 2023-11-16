@@ -22,7 +22,7 @@ struct Diamond: Shape {
         let angleBigIncrease = .pi / 2.0
         
         //The first vertice
-        var angle = angleSmallIncrease
+        var angle = angleSmallIncrease - .pi / 2.0
         let startPoint = CGPoint(
             x: center.x + radius * cos(angle),
             y: center.y + radius * sin(angle)
