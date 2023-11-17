@@ -16,34 +16,45 @@ struct CardView: View {
     }
     
     var body: some View {
-        ZStack {
-            let base = RoundedRectangle(cornerRadius: Constants.cornerRadius)
-            Group {
-                base.fill(.white)
-                base.strokeBorder(lineWidth: Constants.lineWidth)
+        Diamond()
+            .padding(Constants.Diamond.inset)
+            .opacity(Constants.Diamond.opacity)
+            .overlay(
                 Text(card.content)
                     .font(.system(size: Constants.FontSize.lagest))
                     .minimumScaleFactor(Constants.FontSize.scaleFactor)
                     .aspectRatio(1, contentMode: .fit)
-                    .padding(Constants.inset)
-            }.opacity(card.isFaceUp ? 1 : 0)
-            base.fill().opacity(card.isFaceUp ? 0 : 1)
-        }
-        .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
+                    .padding(Constants.FontSize.inset)
+            )
+            .cardify(isFaceUp: card.isFaceUp)
     }
     
     
     private struct Constants {
         static let cornerRadius: CGFloat = 20
         static let lineWidth:  CGFloat = 3
-        static let inset: CGFloat = 5
         struct FontSize {
             static let lagest: CGFloat = 200
-            static let smallest: CGFloat = 1
+            static let smallest: CGFloat = 10
             static let scaleFactor = smallest / lagest
+            static let inset: CGFloat = 9
+        }
+        struct Diamond {
+            static let opacity: Double = 0.3
+            static let inset: CGFloat = 2
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

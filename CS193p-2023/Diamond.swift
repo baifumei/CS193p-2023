@@ -53,7 +53,6 @@ struct Diamond: Shape {
         
         p.addLine(to: startPoint)
         
-    
         return p
     }
     
