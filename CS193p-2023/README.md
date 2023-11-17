@@ -47,3 +47,11 @@ The buttons include an image (created using an SF Symbol) representing the theme
 2. Supported “deselection” by touching already-selected cards (but only if there are 1 or 2 cards (not 3) currently selected).
 
 <img width="300" alt="P2" src="https://sun6-21.userapi.com/impg/YWCsQ4j5zMETuvN7N14JnqAbfmrTyANUa7nsDQ/cDz_x-Rgh2U.jpg?size=660x1260&quality=96&sign=1acdaab43d426459e7d4a881d909d0ac&type=album"><img width="300" alt="P2" src="https://sun9-49.userapi.com/impg/ceTRHahc_yCl0YXFuCPf7cMlDdkiGu3vnzvQdw/DxZatI_wEwI.jpg?size=660x1260&quality=96&sign=27f9e403abd80265c76619f00a853f4c&type=album"> <img width="300" alt="P2" src="https://sun9-2.userapi.com/impg/qumDmVZPa714hQ_Q_CDynqGYGDzkh7zUdSpvaA/kuLbe3_JPtI.jpg?size=660x1260&quality=96&sign=91a9899f28d5a08bbd5f2c3829d64ea6&type=album">
+
+3. Created a file that implements custom shape - diamond. Using Path(), import CoreGraphics.
+
+<img width="300" alt="P2" src="https://sun9-41.userapi.com/impg/ZHdR9wGsp2X-VzNwzDQTp2nVJcXcOIXvne-l6A/-T6rS8o669k.jpg?size=640x1240&quality=96&sign=dd6e6b4384eb9cddeb7d99f857165631&type=album"> <img width="300" alt="P2" src="https://sun9-29.userapi.com/impg/SAvy-rjO6J4ixH3RES7LGLa0v6HapFQBFWR6EQ/aETkHI9MqCw.jpg?size=680x1340&quality=96&sign=8c0d7c034e6375c40a51f746e9a56f1f&type=album">
+
+6. Created a file for ViewModifier (Cardify) and added semi-transparent diamond to the background of the cards. 
+
+<img width="300" alt="P2" src="https://sun9-46.userapi.com/impg/4BJbg4CLTjb5jI8rEMOMJ3jB_8X0GUUgMyq_WA/HHTMXnGAph4.jpg?size=640x1250&quality=96&sign=580d54127dd2061131f877455a94dd7d&type=album"> <img width="300" alt="P2" src="https://sun9-6.userapi.com/impg/KKZuYEfZl9ENnNySCa7M_t7QsYxVmipf5Qp11w/My3EBWCrEwY.jpg?size=640x1250&quality=96&sign=b4a9c1bffabfe3bb89d973bdfa4cc3e3&type=album"> <img width="300" alt="P2" src="https://sun9-75.userapi.com/impg/8DWERDflB0u2ursQAChkr09JOWCTQLCpusHqSA/zsvwmBXqlas.jpg?size=640x1250&quality=96&sign=7b9bbbaef149631db13adcf3cfa8845e&type=album">

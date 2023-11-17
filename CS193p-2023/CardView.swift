@@ -37,7 +37,7 @@ struct CardView: View {
             static let lagest: CGFloat = 200
             static let smallest: CGFloat = 10
             static let scaleFactor = smallest / lagest
-            static let inset: CGFloat = 9
+            static let inset: CGFloat = 10
         }
         struct Diamond {
             static let opacity: Double = 0.3
@@ -68,12 +68,12 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             HStack {
-                CardView(Card(isFaceUp: true, content: "*", id: "1a"))
+                CardView(Card(isFaceUp: true, content: "8", id: "1a"))
                 CardView(Card(content: "*", id: "1b"))
             }
             HStack {
                 CardView(Card(content: "*", id: "1a"))
-                CardView(Card(isFaceUp: true, content: "*", id: "1b"))
+                CardView(Card(isFaceUp: true, content: "8", id: "1b"))
             }
         }
         .padding()
