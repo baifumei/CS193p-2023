@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10C347C2B0CB86E00D1493C /* FlyingNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10C347B2B0CB86E00D1493C /* FlyingNumber.swift */; };
 		E1139D902AFA8EA6000C6940 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1139D8F2AFA8EA6000C6940 /* CardView.swift */; };
 		E1139D922B04CBFF000C6940 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1139D912B04CBFF000C6940 /* Pie.swift */; };
 		E1139D942B04FEF4000C6940 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1139D932B04FEF4000C6940 /* Cardify.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E10C347B2B0CB86E00D1493C /* FlyingNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingNumber.swift; sourceTree = "<group>"; };
 		E1139D8F2AFA8EA6000C6940 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E1139D912B04CBFF000C6940 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		E1139D932B04FEF4000C6940 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				E127C8872AD0476400B24A98 /* EmojiMemoryGame.swift */,
 				E1743BB32AE0168700577464 /* AspectVGrid.swift */,
 				E1B7C3C82ACAED9D0050B8C9 /* EmojiMemoryGameView.swift */,
+				E10C347B2B0CB86E00D1493C /* FlyingNumber.swift */,
 				E1139D8F2AFA8EA6000C6940 /* CardView.swift */,
 				E1139D932B04FEF4000C6940 /* Cardify.swift */,
 				E1139D912B04CBFF000C6940 /* Pie.swift */,
@@ -161,6 +164,7 @@
 			files = (
 				E127C8862AD0465700B24A98 /* MemoryGame.swift in Sources */,
 				E1B7C3C92ACAED9D0050B8C9 /* EmojiMemoryGameView.swift in Sources */,
+				E10C347C2B0CB86E00D1493C /* FlyingNumber.swift in Sources */,
 				E1139D942B04FEF4000C6940 /* Cardify.swift in Sources */,
 				E1B7C3C72ACAED9D0050B8C9 /* CS193p_2023App.swift in Sources */,
 				E1743BB42AE0168700577464 /* AspectVGrid.swift in Sources */,
