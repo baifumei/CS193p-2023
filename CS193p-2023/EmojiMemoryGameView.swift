@@ -17,9 +17,10 @@ struct EmojiMemoryGameView: View {
         VStack {
             cards
                 .foregroundColor(viewModel.color)
-                .animation(.easeInOut(duration: 0.5), value: viewModel.cards)
             Button("Shuffle!") {
-                viewModel.shuffle()
+                withAnimation {
+                    viewModel.shuffle()
+                }
             }
         }.padding()
     }
@@ -30,7 +31,9 @@ struct EmojiMemoryGameView: View {
             CardView(card)
                 .padding(spacing)
                 .onTapGesture {
-                    viewModel.choose(card)
+                    withAnimation {
+                        viewModel.choose(card)
+                    }
                 }
         }
     }

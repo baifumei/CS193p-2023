@@ -16,47 +16,48 @@ struct CardView: View {
     }
     
     var body: some View {
-                Pie(endAngle: .degrees(90))
+                Pie(endAngle: .degrees(290))
                     .opacity(Constant.Pie.opacity)
+                    .padding(Constant.Pie.inset)
                     .overlay(
                         Text(card.content)
                             .font(.system(size: Constant.FontSize.largest))
                             .minimumScaleFactor(Constant.FontSize.scaleFactor)
                             .aspectRatio(1, contentMode: .fit)
-                            .padding(Constant.Pie.inset)
+                            .padding(Constant.FontSize.inset)
+                            .rotationEffect(.degrees(card.isMatched ? 360 : 0))
+                            .animation(.spin(duration: 1), value: card.isMatched)
                     )
                     .cardify(isFaceUp: card.isFaceUp)
                     .padding(Constant.inset)
+                    .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
     }
-    
     
     
     private struct Constant {
         static let cornerRadius: CGFloat = 25
         static let lineWidth: CGFloat = 3
-        static let inset: CGFloat = 5
+        static let inset: CGFloat = 1
         struct FontSize {
             static let largest: CGFloat = 200
             static let smallest: CGFloat = 10
             static let scaleFactor: CGFloat = smallest / largest
+            static let inset: CGFloat = 10
         }
         struct Pie {
             static let opacity: Double = 0.4
-            static let inset: CGFloat = 5
+            static let inset: CGFloat = 4
         }
     }
 }
 
 
 
-
-
-
-
-
-
-
-
+extension Animation {
+    static func spin(duration: TimeInterval) -> Animation {
+        .linear(duration: 1).repeatForever(autoreverses: false)
+    }
+}
 
 
 
