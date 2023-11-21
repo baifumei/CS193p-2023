@@ -50,7 +50,7 @@ The buttons include an image (created using an SF Symbol) representing the theme
 
 3. Created a file that implements custom shape - diamond. Using Path(), import CoreGraphics.
 
-<img width="300" alt="P2" src="https://sun9-41.userapi.com/impg/ZHdR9wGsp2X-VzNwzDQTp2nVJcXcOIXvne-l6A/-T6rS8o669k.jpg?size=640x1240&quality=96&sign=dd6e6b4384eb9cddeb7d99f857165631&type=album"> <img width="300" alt="P2" src="https://sun9-29.userapi.com/impg/SAvy-rjO6J4ixH3RES7LGLa0v6HapFQBFWR6EQ/aETkHI9MqCw.jpg?size=680x1340&quality=96&sign=8c0d7c034e6375c40a51f746e9a56f1f&type=album">
+<img width="300" alt="P2" src="https://sun9-60.userapi.com/impg/oF4TM6oa5OZjzJGpuJqhTz_8kfZoKV58nwqXjg/vTd8uX_g05c.jpg?size=680x1340&quality=96&sign=2bc2e9e38fb4ce85f0b024080b844b74&type=album"> <img width="300" alt="P2" src="https://sun1-23.userapi.com/impg/fHYtSc1VgNJazs8UhI7jjWuAuUyJsYc11E4nqA/SXkN8ElojhQ.jpg?size=680x1340&quality=96&sign=dd4baedbd8e78b2c6ab97c4de2595106&type=album"> <img width="300" alt="P2" src="https://sun9-21.userapi.com/impg/HRY_Dm9hCvRTTPKaG6iD1JjuTjn6nIjOGh-1QA/TqZnZD2remM.jpg?size=680x1340&quality=96&sign=01c660e1ece9fccb54fd6f2dfe876bec&type=album">
 
 6. Created a file for ViewModifier (Cardify) and added semi-transparent diamond to the background of the cards. 
 
