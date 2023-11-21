@@ -68,12 +68,12 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             HStack {
-                CardView(Card(isFaceUp: true, content: "8", id: "1a"))
-                CardView(Card(content: "*", id: "1b"))
+                CardView(Card(isFaceUp: true, content: "💛", id: "1a"))
+                CardView(Card(content: "🖤", id: "1b"))
             }
             HStack {
-                CardView(Card(content: "*", id: "1a"))
-                CardView(Card(isFaceUp: true, content: "8", id: "1b"))
+                CardView(Card(content: "🖤", id: "1a"))
+                CardView(Card(isFaceUp: true, content: "💛", id: "1b"))
             }
         }
         .padding()
