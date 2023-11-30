@@ -10,6 +10,7 @@
 		E1139D962B05150B000C6940 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1139D952B05150B000C6940 /* CardView.swift */; };
 		E1139D982B0635A6000C6940 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1139D972B0635A6000C6940 /* Diamond.swift */; };
 		E1139D9A2B07835B000C6940 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1139D992B07835B000C6940 /* Cardify.swift */; };
+		E11999EA2B188FA2001E9E9C /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11999E92B188FA2001E9E9C /* Star.swift */; };
 		E127C88A2AD6C19100B24A98 /* MemorizeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E127C8892AD6C19100B24A98 /* MemorizeGame.swift */; };
 		E127C88C2AD6C35600B24A98 /* EmojiMemorizeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E127C88B2AD6C35600B24A98 /* EmojiMemorizeGame.swift */; };
 		E1B7C3C72ACAED9D0050B8C9 /* CS193p_2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B7C3C62ACAED9D0050B8C9 /* CS193p_2023App.swift */; };
@@ -22,6 +23,7 @@
 		E1139D952B05150B000C6940 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E1139D972B0635A6000C6940 /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
 		E1139D992B07835B000C6940 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		E11999E92B188FA2001E9E9C /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		E127C8892AD6C19100B24A98 /* MemorizeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeGame.swift; sourceTree = "<group>"; };
 		E127C88B2AD6C35600B24A98 /* EmojiMemorizeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemorizeGame.swift; sourceTree = "<group>"; };
 		E1B7C3C32ACAED9D0050B8C9 /* CS193p-2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS193p-2023.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E11999EB2B189409001E9E9C /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				E1139D972B0635A6000C6940 /* Diamond.swift */,
+				E11999E92B188FA2001E9E9C /* Star.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+		E11999EC2B1894C8001E9E9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1B7C3C82ACAED9D0050B8C9 /* EmojiMemorizeView.swift */,
+				E1139D952B05150B000C6940 /* CardView.swift */,
+				E1139D992B07835B000C6940 /* Cardify.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E11999ED2B1894EA001E9E9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E127C8892AD6C19100B24A98 /* MemorizeGame.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E11999EE2B1894FC001E9E9C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E127C88B2AD6C35600B24A98 /* EmojiMemorizeGame.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E1B7C3BA2ACAED9D0050B8C9 = {
 			isa = PBXGroup;
 			children = (
@@ -64,12 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				E1B7C3C62ACAED9D0050B8C9 /* CS193p_2023App.swift */,
-				E127C8892AD6C19100B24A98 /* MemorizeGame.swift */,
-				E127C88B2AD6C35600B24A98 /* EmojiMemorizeGame.swift */,
-				E1B7C3C82ACAED9D0050B8C9 /* EmojiMemorizeView.swift */,
-				E1139D972B0635A6000C6940 /* Diamond.swift */,
-				E1139D952B05150B000C6940 /* CardView.swift */,
-				E1139D992B07835B000C6940 /* Cardify.swift */,
+				E11999ED2B1894EA001E9E9C /* Model */,
+				E11999EE2B1894FC001E9E9C /* ViewModel */,
+				E11999EB2B189409001E9E9C /* Shapes */,
+				E11999EC2B1894C8001E9E9C /* View */,
 				E1B7C3CA2ACAED9D0050B8C9 /* Assets.xcassets */,
 				E1B7C3D52ACB19410050B8C9 /* README.md */,
 				E1B7C3CC2ACAED9D0050B8C9 /* CS193p_2023.entitlements */,
@@ -163,6 +198,7 @@
 				E1B7C3C72ACAED9D0050B8C9 /* CS193p_2023App.swift in Sources */,
 				E127C88A2AD6C19100B24A98 /* MemorizeGame.swift in Sources */,
 				E1139D962B05150B000C6940 /* CardView.swift in Sources */,
+				E11999EA2B188FA2001E9E9C /* Star.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
