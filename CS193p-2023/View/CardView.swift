@@ -16,7 +16,7 @@ struct CardView: View {
     }
     
     var body: some View {
-        Star()
+        Oval()
             .padding(Constants.Diamond.inset)
             .opacity(Constants.Diamond.opacity)
             .overlay(
@@ -27,6 +27,7 @@ struct CardView: View {
                     .padding(Constants.FontSize.inset)
             )
             .cardify(isFaceUp: card.isFaceUp)
+            .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
     }
     
     

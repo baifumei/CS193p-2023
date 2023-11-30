@@ -10,49 +10,35 @@ import CoreGraphics
 
 struct Diamond: Shape {
     func path(in rect: CGRect) -> Path {
-
-        //the radius of circumcircle
-        let radius = min(rect.width, rect.height) / 2
-
-        //the center of circumcircle
-        let center = CGPoint(x: rect.midX, y: rect.midY)
-
-        // Angle between the vertices of a diamond
-        let angleSmallIncrease = .pi / 4.0
-        let angleBigIncrease = .pi / 2.0
-
-        //The first vertice
-        var angle = angleSmallIncrease - .pi / 2.0
-        let startPoint = CGPoint(
-            x: center.x + radius * cos(angle),
-            y: center.y + radius * sin(angle)
-        )
-
+        let width = rect.size.width
+        let height = rect.size.height
+        
         var p = Path()
-        p.move(to: startPoint)
-
-        var countAngle = 1
-        while countAngle != 5 {
-            if countAngle == 1 || countAngle == 4 {
-                angle += angleSmallIncrease
-                let nextPoint = CGPoint(
-                    x: center.x + radius * cos(angle),
-                    y: center.y + radius * sin(angle)
-                )
-                p.addLine(to: nextPoint)
-            } else if countAngle == 2 || countAngle == 3 {
-                angle += angleBigIncrease
-                let nextPoint = CGPoint(
-                    x: center.x + radius * cos(angle),
-                    y: center.y + radius * sin(angle)
-                )
-                p.addLine(to: nextPoint)
-            }
-            countAngle += 1
-        }
-        
-        p.addLine(to: startPoint)
-        
+        p.move(to: CGPoint(
+            x: 0,
+            y: height / 2
+        )
+        )
+        p.addLine(to: CGPoint(
+            x: width / 2,
+            y: height
+        )
+        )
+        p.addLine(to: CGPoint(
+            x: width,
+            y: height / 2
+        )
+        )
+        p.addLine(to: CGPoint(
+            x: width / 2,
+            y: 0
+        )
+        )
+        p.addLine(to: CGPoint(
+            x: 0,
+            y: height / 2
+        )
+        )
         return p
     }
 }
@@ -60,7 +46,7 @@ struct Diamond: Shape {
 
 
 
-struct ContentView: View {
+struct ContentView3: View {
     var body: some View {
         Diamond()
             .stroke(Color.blue, lineWidth: 3)
@@ -72,8 +58,7 @@ struct ContentView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
-    
     static var previews: some View {
-        ContentView()
+        ContentView3()
     }
 }
