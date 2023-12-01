@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreGraphics
 
-struct Diamond: Shape {
+struct DiamondShape: SwiftUI.Shape {
     func path(in rect: CGRect) -> Path {
         let width = rect.size.width
         let height = rect.size.height
@@ -48,9 +48,8 @@ struct Diamond: Shape {
 
 struct ContentView3: View {
     var body: some View {
-        Diamond()
+        DiamondShape()
             .stroke(Color.blue, lineWidth: 3)
-            .padding()
     }
 }
 

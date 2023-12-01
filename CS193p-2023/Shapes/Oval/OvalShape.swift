@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Oval: Shape {
+struct OvalShape: SwiftUI.Shape {
     func path(in rect: CGRect) -> Path {
         var p = Path()
         p.addRoundedRect(
@@ -23,9 +23,8 @@ struct Oval: Shape {
 
 struct ContentView1: View {
     var body: some View {
-        Oval()
+        OvalShape()
             .stroke(Color.blue, lineWidth: 3)
-            .padding()
     }
 }
 

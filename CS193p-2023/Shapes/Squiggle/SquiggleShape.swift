@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreGraphics
 
-struct Squiggle: Shape {
+struct SquiggleShape: SwiftUI.Shape {
     let angle1: Angle = .degrees(0)
     let endAngle1: Angle = .degrees(140)
     
@@ -51,17 +51,14 @@ struct Squiggle: Shape {
         let startAngle4 = angle4
         p.addArc(center: center4, radius: radius, startAngle: endAngle4, endAngle: startAngle4, clockwise: false)
         
-        
-        
-        
-        
+        p.addLine(to: leftArc)
         return p
     }
 }
 
 struct ContentView2: View {
     var body: some View {
-        Squiggle()
+        SquiggleShape()
             .stroke(Color.blue, lineWidth: 3)
             .padding()
     }

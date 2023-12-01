@@ -16,7 +16,7 @@ struct CardView: View {
     }
     
     var body: some View {
-        Oval()
+        OvalShape()
             .padding(Constants.Diamond.inset)
             .opacity(Constants.Diamond.opacity)
             .overlay(
